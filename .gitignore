@@ -1,4 +1,4 @@
 .env.local
 .dev.vars
-node_modules
+node_modules/
 .wrangler
