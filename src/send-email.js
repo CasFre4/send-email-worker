@@ -103,15 +103,12 @@ const ValidateAndSanitize = (name, email, message) => {
 
 
 async function onRequestPost (context) {
-    console.log('start?')
     const {request, env } = context
     const resend = new Resend(env.RESEND_API_KEY)
     
     try {
         const {name, email, message} = await request.json();
-        console.log('Arrived')
         const validation = ValidateAndSanitize(name, email, message) 
-        console.log(validation)
         if (validation.error) {
             return new Response(JSON.stringify({ error: result.error }), {
                 status: result.status,
@@ -119,7 +116,6 @@ async function onRequestPost (context) {
         });
         }
          const {sanitizedName ,sanitizedEmail, sanitizedMessage } = validation
-        console.log('Arrived')
         await resend.emails.send({
             from: 'omar@omarspot.dev',
             to: 'ocasfre@gmail.com',
@@ -144,7 +140,6 @@ async function onRequestPost (context) {
 }
 export default {
     async fetch(request, env, ctx) {
-        console.log("I PUSH FINGERS INTO MY I's")
         if (request.method === 'OPTIONS') {
             return new Response(null, {
                 status: 200,

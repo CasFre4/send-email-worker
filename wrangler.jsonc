@@ -22,8 +22,9 @@
         "CORS_ORIGIN": "https://omarspot.dev/api/send-email"
       },
       "routes": [
-
-      ]
+        "https://omarspot.dev/api/send-email",
+        "https://omarspot.dev/api/send-email/"
+      ] 
     }
 
   }
