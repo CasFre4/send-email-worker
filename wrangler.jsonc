@@ -1,0 +1,46 @@
+{
+  "name": "contact-form-api",
+  "main": "src/send-email.js",
+  "compatibility_date": "2025-07-15",
+
+  // Environment configurations
+  "env": {
+    "development": {
+      "name": "contact-form-api-dev",
+      "vars": {
+        "ENVIRONMENT": "development",
+        "CORS_ORIGIN": "http://localhost:8787"
+      },
+      "routes": [
+        "http://localhost:8787"
+      ]
+    },
+    "production": {
+      "name": "contact-form-api-prod",
+      "vars": {
+        "ENVIRONMENT": "production",
+        "CORS_ORIGIN": "https://omarspot.dev/api/send-email"
+      },
+      "routes": [
+
+      ]
+    }
+
+  }
+
+  
+
+  // Cron triggers (optional)
+  // "triggers": {
+  //   "crons": ["0 0 * * *"]
+  // },
+
+  // KV namespaces (if you need storage)
+  // "kv_namespaces": [
+  //   {
+  //     "binding": "CONTACT_LOGS",
+  //     "id": "your-kv-namespace-id",
+  //     "preview_id": "your-preview-kv-namespace-id"
+  //   }
+  // ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "contact-form-worker",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker for handling contact form submissions",
+  "main": "src/send-email.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "dev:local": "wrangler dev --local",
+    "deploy": "wrangler deploy",
+    "deploy:dev": "wrangler deploy --env development",
+    "deploy:prod": "wrangler deploy --env production",
+    "tail": "wrangler tail",
+    "tail:dev": "wrangler tail --env development",
+    "whoami": "wrangler whoami",
+    "secret:list": "wrangler secret list",
+    "secret:put": "wrangler secret put",
+    "test": "npm run build && npm run dev:local",
+    "build": "wrangler build",
+    "types": "wrangler types"
+  },
+  "keywords": [
+    "cloudflare",
+    "worker",
+    "contact-form",
+    "email"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240117.0",
+    "typescript": "^5.3.3",
+    "wrangler": "^3.22.0"
+  },
+  "dependencies": {
+    "resend": "^4.6.0",
+    "validator": "^13.15.15"
+  }
+}
